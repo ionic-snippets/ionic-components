@@ -19,7 +19,7 @@ A flexible and customizable star rating component for Angular applications with 
 - Optional rating text display
 - Built with Angular Signals for optimal performance
 
-**Documentation:** [View Full Documentation](https://github.com/ionic-snippets/star-rating)
+**Documentation:** [View Full Documentation](https://github.com/ionic-snippets/ionic-components/tree/main/projects/star-rating-lib)
 
 ---
 
