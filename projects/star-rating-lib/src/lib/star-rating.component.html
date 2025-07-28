@@ -1,0 +1,20 @@
+<div class="star-rating-container">
+  <div class="stars-wrapper">
+    <ion-button
+      *ngFor="let star of stars(); let i = index"
+      [fill]="i + 1 <= rating() ? 'solid' : 'clear'"
+      [size]="getButtonSize()"
+      [disabled]="!editable()"
+      (click)="onStarClick(i + 1)"
+      class="rating-button"
+      [attr.data-rating]="i + 1"
+    >
+      <ion-icon [name]="getIconName(i + 1)" [style]="getIconStyle(i + 1)">
+      </ion-icon>
+    </ion-button>
+  </div>
+
+  <div *ngIf="showRating()" class="rating-text">
+    {{ rating() }}/{{ maxRating() }}
+  </div>
+</div>

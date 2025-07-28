@@ -1,0 +1,168 @@
+.star-rating-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stars-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.rating-button {
+  --background: transparent;
+  --background-hover: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --border-radius: 50%;
+  --min-width: auto;
+  --min-height: auto;
+  --padding-start: 6px;
+  --padding-end: 6px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --border-width: 0;
+  --border-style: none;
+  --border-color: transparent;
+  --box-shadow: none;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  outline: none;
+
+  &.button-small {
+    --padding-start: 4px;
+    --padding-end: 4px;
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+  }
+
+  &.button-large {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+  }
+
+  &:hover {
+    --background: rgba(var(--ion-color-primary-rgb), 0.1);
+    transform: scale(1.1);
+    --border-width: 0;
+    --box-shadow: none;
+  }
+
+  &:active {
+    --background: rgba(var(--ion-color-primary-rgb), 0.2);
+    transform: scale(0.95);
+    --border-width: 0;
+    --box-shadow: none;
+  }
+
+  &:focus {
+    --border-width: 0;
+    --box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  &:focus-visible {
+    --border-width: 0;
+    --box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  &[disabled] {
+    --opacity: 0.6;
+    cursor: default;
+    --border-width: 0;
+    --box-shadow: none;
+
+    &:hover {
+      --background: transparent;
+      transform: none;
+    }
+  }
+
+  // Remove any border that might appear
+  &::before,
+  &::after {
+    border: none;
+    outline: none;
+  }
+
+  // Specific styles for focus
+  &.ion-focused {
+    --border-width: 0;
+    --box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  // Remove focus outline in all browsers
+  &:focus-visible {
+    outline: none;
+    border: none;
+    --border-width: 0;
+    --box-shadow: none;
+  }
+
+  ion-icon {
+    transition: all 0.2s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.rating-text {
+  font-size: 0.9em;
+  color: var(--ion-color-medium);
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+// Mobile optimizations
+@media (max-width: 768px) {
+  .star-rating-container {
+    gap: 4px;
+  }
+
+  .stars-wrapper {
+    gap: 2px;
+  }
+
+  .rating-button {
+    --padding-start: 4px;
+    --padding-end: 4px;
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+
+    &.button-large {
+      --padding-start: 6px;
+      --padding-end: 6px;
+      --padding-top: 6px;
+      --padding-bottom: 6px;
+    }
+  }
+
+  .rating-text {
+    font-size: 0.8em;
+    margin-left: 4px;
+  }
+}
+
+// Optimizations for very small screens
+@media (max-width: 480px) {
+  .star-rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .rating-text {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+}

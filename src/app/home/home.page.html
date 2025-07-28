@@ -1,20 +1,165 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Star Rating Component Demo</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h1>🌟 Star Rating Component</h1>
+  <p>This is a reusable component for rating content with different types of icons.</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Demo 1: Basic stars -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>⭐ Basic Stars (Editable)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Current rating: {{ rating1 }}/5</p>
+      <app-star-rating 
+        [rating]="rating1"
+        [maxRating]="5"
+        iconType="star"
+        [editable]="true"
+        size="medium"
+        color="#ffc107"
+        (ratingChange)="onRatingChange($event, 1)"
+        (ratingClick)="onRatingClick($event)">
+      </app-star-rating>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Demo 2: Hearts -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>❤️ Hearts (Editable)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Current rating: {{ rating2 }}/5</p>
+      <app-star-rating 
+        [rating]="rating2"
+        [maxRating]="5"
+        iconType="heart"
+        [editable]="true"
+        size="large"
+        color="#ff4081"
+        (ratingChange)="onRatingChange($event, 2)"
+        (ratingClick)="onRatingClick($event)">
+      </app-star-rating>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Demo 3: Thumbs up -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>👍 Thumbs Up (Editable)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Current rating: {{ rating3 }}/5</p>
+      <app-star-rating 
+        [rating]="rating3"
+        [maxRating]="5"
+        iconType="thumbs-up"
+        [editable]="true"
+        size="medium"
+        color="#4caf50"
+        (ratingChange)="onRatingChange($event, 3)"
+        (ratingClick)="onRatingClick($event)">
+      </app-star-rating>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Demo 4: Read only -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>📊 Read Only (Non-Editable)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Fixed rating: {{ rating4 }}/5</p>
+      <app-star-rating 
+        [rating]="rating4"
+        [maxRating]="5"
+        iconType="star"
+        [editable]="false"
+        size="small"
+        color="#ffc107"
+        [showRating]="true">
+      </app-star-rating>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Demo 5: Different sizes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>📏 Different Sizes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div style="margin-bottom: 10px;">
+        <p>Small:</p>
+        <app-star-rating 
+          [rating]="rating5"
+          [maxRating]="5"
+          iconType="star"
+          [editable]="true"
+          size="small"
+          color="#ffc107"
+          (ratingChange)="onRatingChange($event, 5)"
+          (ratingClick)="onRatingClick($event)">
+        </app-star-rating>
+      </div>
+      
+      <div style="margin-bottom: 10px;">
+        <p>Medium:</p>
+        <app-star-rating 
+          [rating]="rating5"
+          [maxRating]="5"
+          iconType="star"
+          [editable]="true"
+          size="medium"
+          color="#ffc107"
+          (ratingChange)="onRatingChange($event, 5)"
+          (ratingClick)="onRatingClick($event)">
+        </app-star-rating>
+      </div>
+      
+      <div>
+        <p>Large:</p>
+        <app-star-rating 
+          [rating]="rating5"
+          [maxRating]="5"
+          iconType="star"
+          [editable]="true"
+          size="large"
+          color="#ffc107"
+          (ratingChange)="onRatingChange($event, 5)"
+          (ratingClick)="onRatingClick($event)">
+        </app-star-rating>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Component information -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>📋 Component Properties</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h3>Inputs:</h3>
+      <ul>
+        <li><strong>rating</strong>: Number of selected stars</li>
+        <li><strong>maxRating</strong>: Maximum number of stars</li>
+        <li><strong>iconType</strong>: Icon type (star, heart, thumbs-up, diamond, square, circle)</li>
+        <li><strong>editable</strong>: Whether editing is allowed or read-only</li>
+        <li><strong>size</strong>: Size (small, medium, large)</li>
+        <li><strong>color</strong>: Color of filled stars</li>
+        <li><strong>emptyColor</strong>: Color of empty stars</li>
+        <li><strong>showRating</strong>: Show rating text</li>
+      </ul>
+      
+      <h3>Outputs:</h3>
+      <ul>
+        <li><strong>ratingChange</strong>: Emitted when rating changes</li>
+        <li><strong>ratingClick</strong>: Emitted when a star is clicked</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

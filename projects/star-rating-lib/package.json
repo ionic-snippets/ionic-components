@@ -1,0 +1,33 @@
+{
+  "name": "@ionic-snippets/star-rating",
+  "version": "1.0.0",
+  "description": "A flexible star rating component for Angular with Ionic support",
+  "keywords": [
+    "angular",
+    "ionic",
+    "star-rating",
+    "rating",
+    "component",
+    "typescript"
+  ],
+  "author": "Ionic Snippets",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-snippets/ionic-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-snippets/ionic-components/issues"
+  },
+  "homepage": "https://github.com/ionic-snippets/ionic-components#readme",
+  "peerDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@ionic/angular": "^8.0.0",
+    "ionicons": "^7.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

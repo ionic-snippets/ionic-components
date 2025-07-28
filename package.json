@@ -7,9 +7,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build star-rating-lib",
+    "build:lib:prod": "ng build star-rating-lib --configuration production",
+    "test:lib": "ng test star-rating-lib",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "publish:lib": "npm run build:lib:prod && cd dist/star-rating-lib && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +62,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.1.0",
     "typescript": "~5.8.0"
   },
   "description": "An Ionic project"
