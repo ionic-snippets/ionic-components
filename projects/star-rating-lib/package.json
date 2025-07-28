@@ -2,6 +2,9 @@
   "name": "@ionic-snippets/star-rating",
   "version": "1.0.0",
   "description": "A flexible star rating component for Angular with Ionic support",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "angular",
     "ionic",

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
-import { StarRatingComponent } from 'projects/star-rating-lib/src/lib/star-rating.component';
+import { StarRatingComponent } from '@ionic-snippets/star-rating';
 
 @Component({
   selector: 'app-home',

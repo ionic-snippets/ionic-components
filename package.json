@@ -15,7 +15,6 @@
     "lint": "ng lint",
     "publish:lib": "npm run build:lib:prod && cd dist/star-rating-lib && npm publish"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^20.0.0",
     "@angular/common": "^20.0.0",
@@ -30,6 +29,7 @@
     "@capacitor/haptics": "7.0.1",
     "@capacitor/keyboard": "7.0.1",
     "@capacitor/status-bar": "7.0.1",
+    "@ionic-snippets/star-rating": "^1.0.0",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
